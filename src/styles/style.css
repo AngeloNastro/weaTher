@@ -1,0 +1,200 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap');
+
+/* CONSTANTS */
+:root 
+{
+    /* DIMENSIONS */
+    --appWidth: 100%;
+    --appHeight: 100vh;
+    
+    /* DEFAULTS */
+    --primaryBackground: rgb(16,16,18);     /* BLACK */
+    --secondaryBackground: rgb(50,53,62);   /* GREY */
+    --primaryForeground: rgb(245,156,9);    /* ORANGE */
+    --secondaryForeground: rgb(93,94,98);   /* LIGHTGREY */
+    --primaryFontColour: rgb(236, 236, 236);/* WHITE */   
+}
+
+*{
+    box-sizing: border-box; 
+}
+
+body{
+    margin: 0;
+}
+
+/* UTILITY classes */
+.noselect{
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.noGhost{
+    pointer-events: none;
+}
+
+.flexHorizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flexVertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.justifyCenter{
+    justify-content: center !important;
+}
+
+.alignEnd{
+    align-items: flex-end !important;
+}
+
+/* APP.js */
+.App{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primaryBackground);
+    color: var(--primaryFontColour);
+    width: var(--appWidth);
+    height: var(--appHeight);
+}
+
+.Header{
+    background-color: var(--secondaryBackground);
+    width: var(--appWidth);
+    padding: 10px 10px 5px 10px;
+}
+
+.HeaderInfo{
+    width: var(--appWidth);
+}
+
+.HeaderInfo>div{
+    width: calc(var(--appWidth)/3);
+}
+
+.HeaderInfoCity{
+    font-size: xx-large;
+}
+
+.HeaderInfoClock{
+    border: 1px solid var(--primaryBackground);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: small;
+    width: auto !important;
+}
+
+.HeaderInfoTemperature{
+    text-align: right;
+    font-size: xx-large;
+}
+
+.HeaderBar{
+    width: var(--appWidth);
+}
+
+.HeaderBarTime{
+    margin-right: auto;
+    font-size: x-small;
+}
+
+/* .HeaderBarProgress{
+
+} */
+
+.MainView{
+    /* width: calc(var(--appWidth)/2) */
+    width: var(--appWidth);
+    height: var(--appHeight);
+    overflow-y: auto;
+    overflow-x: auto
+}
+
+.MainView>div{
+    width: 98%;
+    background-color: var(--secondaryForeground);
+    margin: 3px;
+    border-radius: 5px;
+}
+
+.Footer{
+    margin-top: auto;
+    width: 100%;
+    text-align: right;
+    opacity: 0.2;
+    font-weight: 100;
+}
+
+/* DAY.js */
+/* .MainViewDay{
+
+} */
+
+.MainViewDay>div{
+    margin: 10px;
+    width: 33.3%
+}
+
+.DayDate{
+    font-size: x-large;
+}
+
+.DayIcon{
+    font-weight: 300;
+    font-size: small;
+    width: 200px !important;
+}
+
+.DayIconSrc{
+    width: 55px;
+    /* margin-left: auto;     */
+}
+
+/* .DayType{
+    
+} */
+
+.DayTemp{
+    margin-right: 25% !important;
+    font-size: xx-large;
+}
+
+/* .DayDescription{
+    
+} */
+
+/* PROGRESS BAR */
+  progress[value]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 95vw;
+    margin: 5px;
+    height: 20px;
+    border: 1px solid var(--primaryBackground);
+    border-radius: 25px;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    background-color: var(--secondaryBackground);
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+
+  progress[value]::-webkit-progress-value {
+    background-color: var(--primaryForeground);
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
